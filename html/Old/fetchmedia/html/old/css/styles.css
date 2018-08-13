@@ -1,0 +1,38 @@
+body { 
+font-family: Verdana, Helvetica, Arial, sans-serif;
+font-size: 0.75em;
+line-height: 1.2em;
+
+text-align: left;}
+
+a:link {
+text-decoration: underline;}
+
+a:hover {
+text-decoration: underline;}
+
+h1 {font-size: 1.4em;
+font-family: Times, "Times New Roman", serif;
+font-weight: bold;
+text-align: left;}
+
+h2 {font-size: 1.3em;
+font-family: Times, "Times New Roman", serif;
+font-weight: bold;
+text-align: left;}
+
+h3 {font-size: 1.2em;
+font-family: Times, "Times New Roman", serif;
+font-weight: bold;
+text-align: left;}
+
+h4 {font-size: 1.1em;
+font-family: Times, "Times New Roman", serif;
+font-weight: bold;
+text-align: left;}
+
+h5 {font-size: 1em;
+font-family: Times, "Times New Roman", serif;
+font-weight: bold;
+text-align: left;}
+

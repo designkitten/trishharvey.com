@@ -1,0 +1,571 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang='en'>
+<head>
+<meta http-equiv="description" content="Awstats - Advanced Web Statistics for penrosegroup.com">
+<meta http-equiv="keywords" content="penrosegroup.com, free, advanced, realtime, web, server, logfile, log, analyzer, analysis, statistics, stats, perl, analyse, performance, hits, visits">
+<meta name="robots" content="index,follow">
+<title>Statistics for penrosegroup.com</title>
+<link rel="stylesheet" href="http://webcluster01.covad.net/awstats/stylesheets/reporting.css">
+</head>
+
+<body>
+<DIV CLASS="CTooltip" ID="tt1">
+A new visits is defined as each new <b>incoming visitor</b> (viewing or browsing a page) who was not connected to your site during last <b>60 mn</b>.
+</DIV>
+<DIV CLASS="CTooltip" ID="tt2">
+Number of client hosts (<b>IP address</b>) who came to visit the site (and who viewed at least one <b>page</b>).<br>
+This data refers to the number of <b>different physical persons</b> who had reached the site.
+</DIV>
+<DIV CLASS="CTooltip" ID="tt3">
+Number of times a <b>page</b> of the site is <b>viewed</b> (Sum for all visitors for all visits).<br>
+This piece of data differs from "hits" in that it counts only HTML pages as oppose to images and other files.
+</DIV>
+<DIV CLASS="CTooltip" ID="tt4">
+Number of times a <b>page, image, file</b> of the site is <b>viewed</b> or <b>downloaded</b> by someone.<br>
+This piece of data is provided as a reference only, since the number of "pages" viewed is often prefered for marketing purposes.
+</DIV>
+<DIV CLASS="CTooltip" ID="tt5">
+This piece of information refers to the amount of data downloaded by all <b>pages</b>, <b>images</b> and <b>files</b> within your site.<br>
+Units are in KB, MB or GB (KiloBytes, MegaBytes or GigaBytes)
+</DIV>
+<DIV CLASS="CTooltip" ID="tt13">
+Awstats recognizes each access to your site after a <b>search</b> from the <b>90 most popular Internet Search Engines and Directories</b> (such as Yahoo, Altavista, Lycos, Google, Voila, etc...).
+</DIV>
+<DIV CLASS="CTooltip" ID="tt14">
+List of all <b>external pages</b> which were used to link (and enter) to your site (Only the <b>10</b> most often used external pages are shown).
+Links used by the results of the search engines are excluded here because they have already been included on the previous line within this table.
+</DIV>
+<DIV CLASS="CTooltip" ID="tt15">
+This table shows the list of the most frequent <b>keyphrases or keywords</b> used to find your site from Internet Search Engines and Directories.
+(Keywords from the <b>90</b> most popular Search Engines and Directories are recognized by Awstats, such as Yahoo, Altavista, Lycos, Google, Voila, etc...).<br>
+Note that total number of searches for keywords might be greater than total number of searches for keyphrases (real number of searches) because when 2 keywords were used on same search, search is counted twice for keywords (once for each word).
+</DIV>
+<DIV CLASS="CTooltip" ID="tt16">
+Robots (sometimes refer to Spiders) are <b>automatic computer visitors</b> used by many search engines that scan your web site to index it and rank it, collect statistics on Internet Web sites and/or see if your site is still online.<br>
+Awstats is able to recognize up to <b>307</b> robots.
+</DIV>
+<DIV CLASS="CTooltip" ID="tt17">
+All time related statistics are based on server time.<br>
+</DIV>
+<DIV CLASS="CTooltip" ID="tt18">
+Here, reported data are: <b>average values</b> (calculated from all data between the first and last visit)
+</DIV>
+<DIV CLASS="CTooltip" ID="tt19">
+Here, reported data are: <b>cumulative sums</b> (calculated from all data between the first and last visit)
+</DIV>
+<DIV CLASS="CTooltip" ID="tt20">
+Some <b>Visits durations</b> are 'unknown' because they can't always be calculated. This is the major reason for this:<br>
+- Visit was not finished when 'update' occured.<br>
+- Visit started the last hour (after 23:00) of the last day of a month (A technical reason prevents Awstats from calculating duration of such sessions)
+</DIV>
+
+<DIV CLASS="CTooltip" ID="tt201"> No description for this error. </DIV>
+<DIV CLASS="CTooltip" ID="tt202"> Request was understood by server but will be processed later. </DIV>
+<DIV CLASS="CTooltip" ID="tt204"> Server has processed the request but there is no document to send. </DIV>
+<DIV CLASS="CTooltip" ID="tt206"> Partial content. </DIV>
+<DIV CLASS="CTooltip" ID="tt301"> Requested document was moved and is now at another address given in answer. </DIV>
+<DIV CLASS="CTooltip" ID="tt302"> No description for this error. </DIV>
+<DIV CLASS="CTooltip" ID="tt400"> Syntax error, server didn't understand request. </DIV>
+<DIV CLASS="CTooltip" ID="tt401"> Tried to reach an <b>URL where a login/password pair was required</b>.<br>A high number within this item could mean that someone (such as a hacker) is attempting to crack, or enter into your site (hoping to enter a secured area by trying different login/password pairs, for instance). </DIV>
+<DIV CLASS="CTooltip" ID="tt403"> Tried to reach an <b>URL not configured to be reachable, even with an login/password pair</b> (for example, an URL within a directory not defined as "browsable".). </DIV>
+<DIV CLASS="CTooltip" ID="tt404"> Tried to reach a <b>non existing URL</b>. This error often means that there is an invalid link somewhere in your site or that a visitor mistyped a certain URL. </DIV>
+<DIV CLASS="CTooltip" ID="tt408"> Server has taken <b>too much time</b> to respond to a request. This error frequently involves either a slow CGI script which the server was required to kill or an extremely congested web server. </DIV>
+<DIV CLASS="CTooltip" ID="tt500"> Internal error. This error is often caused by a CGI program that had finished abnormally (coredump for example). </DIV>
+<DIV CLASS="CTooltip" ID="tt501"> Unknown requested action. </DIV>
+<DIV CLASS="CTooltip" ID="tt502"> Code returned by a HTTP server that works as a proxy or gateway when a real, targeted server doesn't answer successfully to the client's request. </DIV>
+<DIV CLASS="CTooltip" ID="tt503"> Internal server error. </DIV>
+<DIV CLASS="CTooltip" ID="tt504"> Gateway Time-out. </DIV>
+<DIV CLASS="CTooltip" ID="tt505"> HTTP Version Not Supported. </DIV>
+
+<script language="javascript" type="text/javascript">
+function ShowTip(fArg)
+{
+	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");
+	if (tooltipOBJ != null) {
+		var tooltipLft = (document.body.offsetWidth?document.body.offsetWidth:document.body.style.pixelWidth) - (tooltipOBJ.offsetWidth?tooltipOBJ.offsetWidth:(tooltipOBJ.style.pixelWidth?tooltipOBJ.style.pixelWidth:380)) - 30;
+		if (navigator.appName == 'Netscape') {
+			var tooltipTop = 10;
+			tooltipOBJ.style.left = tooltipLft; tooltipOBJ.style.top = tooltipTop;
+		}
+		else {
+			var tooltipTop = (document.body.scrollTop>=0?document.body.scrollTop+10:event.clientY+10);
+			if ((event.clientX > tooltipLft) && (event.clientY < (tooltipOBJ.scrollHeight?tooltipOBJ.scrollHeight:tooltipOBJ.style.pixelHeight) + 10)) {
+				tooltipTop = (document.body.scrollTop?document.body.scrollTop:document.body.offsetTop) + event.clientY + 20;
+			}
+			tooltipOBJ.style.pixelLeft = tooltipLft; tooltipOBJ.style.pixelTop = tooltipTop;
+		}
+		tooltipOBJ.style.visibility = "visible";
+	}
+}
+function HideTip(fArg)
+{
+	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");
+	if (tooltipOBJ != null) {
+		tooltipOBJ.style.visibility = "hidden";
+	}
+}
+</script>
+
+<a name="TOP">&nbsp;</a>
+
+
+
+<table class=Title border="0" cellspacing="0" cellpadding="0" background="http://192.168.96.13/images/nav_bg.gif">
+<tr class=Title><td width=100% class=Title><img alin=left src="http://192.168.96.13/images/nav_bg.gif" alt="" width="100%" height="40" border="0"></td><td alin="left" class=Title><img alin=right src="http://192.168.96.13/images/nav_title.gif" alt="" wxidth="540" height="40" border="0"></td></tr>
+</table>
+
+<a name="MENU">&nbsp;</a>
+<FORM name="FormDateFilter" action="/cgi-bin/awstats.pl?config=vhost&output=monthdayvalues" style="padding: 2px 2px 2px 2px; margin-top: 0"><table cellspacing=0 cellpadding=3 border=0>
+<tr><th class=SiteHead>Statistics for : </th><td class=SiteHead><font style="font-size: 14px;">penrosegroup.com</font></td></tr>
+<tr><th class=SiteHead valign=top>Last Update :</th><td class=SiteHead><font style="font-size: 14px;">15 Sep 2003 - 08:28</font></td></tr>
+<tr><th class=SiteHead valign=middle>Reported period :</th><td class=SiteHead valign=top><font style="font-size: 14px;">Month Sep 2003</font></td></tr>
+</table>
+</FORM>
+
+<table class=Title>
+<tr><td class=CloseWin><a href="javascript:parent.window.close();">Close window</a></td></tr>
+</table>
+
+<a name="MONTHDAY">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%"><center>Month/Day</center></TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TD><b>First visit</b></TD>
+<TD colspan=3><B>Summary</B></TD><TD><b>Last visit</b></TD></TR>
+<TR bgcolor="#ECECEC"><TD>NA</TD><TD colspan=3><B>Month Sep 2003</B></TD><TD>14 Sep 2003 - 11:20</TD></TR>
+<TR><TD width="20%" bgcolor="#FFB055" onmouseover="ShowTip(2);" onmouseout="HideTip(2);">Unique visitors</TD><TD width="20%" bgcolor="#F8E880" onmouseover="ShowTip(1);" onmouseout="HideTip(1);">Number of visits</TD><TD width="20%" bgcolor="#4477DD" onmouseover="ShowTip(3);" onmouseout="HideTip(3);">Pages</TD><TD width="20%" bgcolor="#66F0FF" onmouseover="ShowTip(4);" onmouseout="HideTip(4);">Hits</TD><TD width="20%" bgcolor="#2EA495" onmouseover="ShowTip(5);" onmouseout="HideTip(5);">Bandwidth</TD></TR>
+<TR><TD><b>84</b><br>&nbsp;</TD><TD><b>99</b><br>(1.17&nbsp;visits/visitor)</TD><TD><b>277</b><br>(2.79&nbsp;pages/visit)</TD><TD><b>2097</b><br>(21.18&nbsp;hits/visit)</TD><TD><b>16.32 MB</b><br>(168.84&nbsp;KB/visit)</TD></TR>
+<TR valign=bottom><TD align=center colspan=5><CENTER><TABLE><TR valign=bottom><td>&nbsp;</td><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=77 WIDTH=6 ALT="Unique visitors: 84" title="Unique visitors: 84"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=91 WIDTH=6 ALT="Number of visits: 99" title="Number of visits: 99">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=12 WIDTH=6 ALT="Pages: 277" title="Pages: 277"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=91 WIDTH=6 ALT="Hits: 2097" title="Hits: 2097"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=91 WIDTH=6 ALT="Bandwidth: 16.32 MB" title="Bandwidth: 16.32 MB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevu.png" HEIGHT=1 WIDTH=6 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=6 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: " title="Pages: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: " title="Hits: "><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+</TR>
+<TR valign=middle><td>&nbsp;</td><TD>Jan</TD><TD>Feb</TD><TD>Mar</TD><TD>Apr</TD><TD>May</TD><TD>Jun</TD><TD>Jul</TD><TD>Aug</TD><TD>Sep</TD><TD>Oct</TD><TD>Nov</TD><TD>Dec</TD></TR>
+</TABLE>
+<br>
+<TABLE>
+<TR><TD width="80" bgcolor="#ECECEC">Month</TD><TD width="80" bgcolor="#FFB055" onmouseover="ShowTip(2);" onmouseout="HideTip(2);">Unique visitors</TD><TD width="80" bgcolor="#F8E880" onmouseover="ShowTip(1);" onmouseout="HideTip(1);">Number of visits</TD><TD width="80" bgcolor="#4477DD" onmouseover="ShowTip(3);" onmouseout="HideTip(3);">Pages</TD><TD width="80" bgcolor="#66F0FF" onmouseover="ShowTip(4);" onmouseout="HideTip(4);">Hits</TD><TD width="80" bgcolor="#2EA495" onmouseover="ShowTip(5);" onmouseout="HideTip(5);">Bandwidth</TD></TR><TR><TD>Jan</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Feb</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Mar</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Apr</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>May</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Jun</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Jul</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Aug</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Sep</TD><TD>84</TD><TD>99</TD><TD>277</TD><TD>2097</TD><TD>16.32 MB</TD></TR>
+<TR><TD>Oct</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Nov</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>Dec</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD bgcolor="#ECECEC">Total</TD><TD bgcolor="#ECECEC">84</TD><TD bgcolor="#ECECEC">99</TD><TD bgcolor="#ECECEC">277</TD><TD bgcolor="#ECECEC">2097</TD><TD bgcolor="#ECECEC">16.32 MB</TD></TR>
+</TABLE>
+<br><TABLE><TR valign=bottom><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=6 WIDTH=4 ALT="Number of visits: 1" title="Number of visits: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=3 WIDTH=4 ALT="Hits: 17" title="Hits: 17"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=3 WIDTH=4 ALT="Bandwidth: 144.24 KB" title="Bandwidth: 144.24 KB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=53 WIDTH=4 ALT="Number of visits: 10" title="Number of visits: 10"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 40" title="Pages: 40"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=35 WIDTH=4 ALT="Hits: 234" title="Hits: 234"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=30 WIDTH=4 ALT="Bandwidth: 1.56 MB" title="Bandwidth: 1.56 MB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=22 WIDTH=4 ALT="Number of visits: 4" title="Number of visits: 4"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=2 WIDTH=4 ALT="Pages: 7" title="Pages: 7"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=9 WIDTH=4 ALT="Hits: 58" title="Hits: 58"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=8 WIDTH=4 ALT="Bandwidth: 417.60 KB" title="Bandwidth: 417.60 KB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=48 WIDTH=4 ALT="Number of visits: 9" title="Number of visits: 9"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=4 WIDTH=4 ALT="Pages: 25" title="Pages: 25"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=29 WIDTH=4 ALT="Hits: 193" title="Hits: 193"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=21 WIDTH=4 ALT="Bandwidth: 1.07 MB" title="Bandwidth: 1.07 MB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=43 WIDTH=4 ALT="Number of visits: 8" title="Number of visits: 8"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=3 WIDTH=4 ALT="Pages: 18" title="Pages: 18"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=24 WIDTH=4 ALT="Hits: 157" title="Hits: 157"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=18 WIDTH=4 ALT="Bandwidth: 931.29 KB" title="Bandwidth: 931.29 KB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=16 WIDTH=4 ALT="Number of visits: 3" title="Number of visits: 3"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 6" title="Pages: 6"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=6 WIDTH=4 ALT="Hits: 39" title="Hits: 39"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=7 WIDTH=4 ALT="Bandwidth: 353.78 KB" title="Bandwidth: 353.78 KB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=6 WIDTH=4 ALT="Number of visits: 1" title="Number of visits: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 1" title="Pages: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 1" title="Hits: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=2 WIDTH=4 ALT="Bandwidth: 68.39 KB" title="Bandwidth: 68.39 KB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=48 WIDTH=4 ALT="Number of visits: 9" title="Number of visits: 9"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=4 WIDTH=4 ALT="Pages: 21" title="Pages: 21"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=25 WIDTH=4 ALT="Hits: 166" title="Hits: 166"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=33 WIDTH=4 ALT="Bandwidth: 1.76 MB" title="Bandwidth: 1.76 MB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=59 WIDTH=4 ALT="Number of visits: 11" title="Number of visits: 11"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=3 WIDTH=4 ALT="Pages: 19" title="Pages: 19"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=26 WIDTH=4 ALT="Hits: 171" title="Hits: 171"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=21 WIDTH=4 ALT="Bandwidth: 1.09 MB" title="Bandwidth: 1.09 MB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=91 WIDTH=4 ALT="Number of visits: 17" title="Number of visits: 17"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=11 WIDTH=4 ALT="Pages: 70" title="Pages: 70"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=91 WIDTH=4 ALT="Hits: 610" title="Hits: 610"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=91 WIDTH=4 ALT="Bandwidth: 4.80 MB" title="Bandwidth: 4.80 MB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=80 WIDTH=4 ALT="Number of visits: 15" title="Number of visits: 15"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=8 WIDTH=4 ALT="Pages: 51" title="Pages: 51"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=49 WIDTH=4 ALT="Hits: 330" title="Hits: 330"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=64 WIDTH=4 ALT="Bandwidth: 3.40 MB" title="Bandwidth: 3.40 MB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=43 WIDTH=4 ALT="Number of visits: 8" title="Number of visits: 8"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=3 WIDTH=4 ALT="Pages: 14" title="Pages: 14"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=16 WIDTH=4 ALT="Hits: 106" title="Hits: 106"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=13 WIDTH=4 ALT="Bandwidth: 699.84 KB" title="Bandwidth: 699.84 KB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=11 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=3 WIDTH=4 ALT="Hits: 14" title="Hits: 14"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=2 WIDTH=4 ALT="Bandwidth: 84.79 KB" title="Bandwidth: 84.79 KB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=6 WIDTH=4 ALT="Number of visits: 1" title="Number of visits: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 1" title="Pages: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 1" title="Hits: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 11.38 KB" title="Bandwidth: 11.38 KB"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=4 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD>
+<TD>&nbsp;</TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevv.png" HEIGHT=35 WIDTH=4 ALT="Number of visits: 6.60" title="Number of visits: 6.60"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=3 WIDTH=4 ALT="Pages: 18.47" title="Pages: 18.47"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=21 WIDTH=4 ALT="Hits: 139.80" title="Hits: 139.80"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=21 WIDTH=4 ALT="Bandwidth: 1.09 MB" title="Bandwidth: 1.09 MB"></TD>
+</TR>
+<TR><TD valign=middle>01<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>02<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>03<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>04<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>05<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">06<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">07<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>08<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>09<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>10<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>11<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>12<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">13<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">14<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle><b>15<br><font style="font-size: 10px;">Sep</font></b></TD>
+<TD valign=middle>16<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>17<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>18<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>19<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">20<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">21<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>22<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>23<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>24<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>25<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>26<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">27<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">28<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>29<br><font style="font-size: 10px;">Sep</font></TD>
+<TD valign=middle>30<br><font style="font-size: 10px;">Sep</font></TD>
+<TD>&nbsp;</TD><TD valign=middle onmouseover="ShowTip(18);" onmouseout="HideTip(18);">Average</TD>
+</TR>
+</TABLE>
+<br>
+<TABLE>
+<TR><TD width="80" bgcolor="#ECECEC">Day</TD><TD width="80" bgcolor="#F8E880" onmouseover="ShowTip(1);" onmouseout="HideTip(1);">Number of visits</TD><TD width="80" bgcolor="#4477DD" onmouseover="ShowTip(3);" onmouseout="HideTip(3);">Pages</TD><TD width="80" bgcolor="#66F0FF" onmouseover="ShowTip(4);" onmouseout="HideTip(4);">Hits</TD><TD width="80" bgcolor="#2EA495" onmouseover="ShowTip(5);" onmouseout="HideTip(5);">Bandwidth</TD></TR><TR><TD>01 Sep 2003</TD><TD>1</TD><TD>2</TD><TD>17</TD><TD>144.24 KB</TD></TR>
+<TR><TD>02 Sep 2003</TD><TD>10</TD><TD>40</TD><TD>234</TD><TD>1.56 MB</TD></TR>
+<TR><TD>03 Sep 2003</TD><TD>4</TD><TD>7</TD><TD>58</TD><TD>417.60 KB</TD></TR>
+<TR><TD>04 Sep 2003</TD><TD>9</TD><TD>25</TD><TD>193</TD><TD>1.07 MB</TD></TR>
+<TR><TD>05 Sep 2003</TD><TD>8</TD><TD>18</TD><TD>157</TD><TD>931.29 KB</TD></TR>
+<TR><TD bgcolor="#EAEAEA">06 Sep 2003</TD><TD bgcolor="#EAEAEA">3</TD><TD bgcolor="#EAEAEA">6</TD><TD bgcolor="#EAEAEA">39</TD><TD bgcolor="#EAEAEA">353.78 KB</TD></TR>
+<TR><TD bgcolor="#EAEAEA">07 Sep 2003</TD><TD bgcolor="#EAEAEA">1</TD><TD bgcolor="#EAEAEA">1</TD><TD bgcolor="#EAEAEA">1</TD><TD bgcolor="#EAEAEA">68.39 KB</TD></TR>
+<TR><TD>08 Sep 2003</TD><TD>9</TD><TD>21</TD><TD>166</TD><TD>1.76 MB</TD></TR>
+<TR><TD>09 Sep 2003</TD><TD>11</TD><TD>19</TD><TD>171</TD><TD>1.09 MB</TD></TR>
+<TR><TD>10 Sep 2003</TD><TD>17</TD><TD>70</TD><TD>610</TD><TD>4.80 MB</TD></TR>
+<TR><TD>11 Sep 2003</TD><TD>15</TD><TD>51</TD><TD>330</TD><TD>3.40 MB</TD></TR>
+<TR><TD>12 Sep 2003</TD><TD>8</TD><TD>14</TD><TD>106</TD><TD>699.84 KB</TD></TR>
+<TR><TD bgcolor="#EAEAEA">13 Sep 2003</TD><TD bgcolor="#EAEAEA">2</TD><TD bgcolor="#EAEAEA">2</TD><TD bgcolor="#EAEAEA">14</TD><TD bgcolor="#EAEAEA">84.79 KB</TD></TR>
+<TR><TD bgcolor="#EAEAEA">14 Sep 2003</TD><TD bgcolor="#EAEAEA">1</TD><TD bgcolor="#EAEAEA">1</TD><TD bgcolor="#EAEAEA">1</TD><TD bgcolor="#EAEAEA">11.38 KB</TD></TR>
+<TR><TD>15 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>16 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>17 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>18 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>19 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD bgcolor="#EAEAEA">20 Sep 2003</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD></TR>
+<TR><TD bgcolor="#EAEAEA">21 Sep 2003</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD></TR>
+<TR><TD>22 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>23 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>24 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>25 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>26 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD bgcolor="#EAEAEA">27 Sep 2003</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD></TR>
+<TR><TD bgcolor="#EAEAEA">28 Sep 2003</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD><TD bgcolor="#EAEAEA">0</TD></TR>
+<TR><TD>29 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>30 Sep 2003</TD><TD>0</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD bgcolor="#ECECEC">Average</TD><TD bgcolor="#ECECEC">6.60</TD><TD bgcolor="#ECECEC">18.47</TD><TD bgcolor="#ECECEC">139.80</TD><TD bgcolor="#ECECEC">1.09 MB</TD></TR>
+<TR><TD bgcolor="#ECECEC">Total</TD><TD bgcolor="#ECECEC">99</TD><TD bgcolor="#ECECEC">277</TD><TD bgcolor="#ECECEC">2097</TD><TD bgcolor="#ECECEC">16.32 MB</TD></TR>
+</TABLE>
+<br></CENTER>
+</TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+
+<a name="WHEN">&nbsp;</a>
+
+<a name="DAYOFWEEK">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(18);" onmouseout="HideTip(18);">Days of week (avg) </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR><TD align=center><center><TABLE><TR valign=bottom>
+<TD valign=bottom><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=3 WIDTH=6 ALT="Pages: 7.67" title="Pages: 7.67"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=17 WIDTH=6 ALT="Hits: 61" title="Hits: 61"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=22 WIDTH=6 ALT="Bandwidth: 648.06 KB" title="Bandwidth: 648.06 KB"></TD>
+<TD valign=bottom><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=8 WIDTH=6 ALT="Pages: 29.50" title="Pages: 29.50"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=55 WIDTH=6 ALT="Hits: 202.50" title="Hits: 202.50"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=46 WIDTH=6 ALT="Bandwidth: 1.33 MB" title="Bandwidth: 1.33 MB"></TD>
+<TD valign=bottom><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=11 WIDTH=6 ALT="Pages: 38.50" title="Pages: 38.50"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=91 WIDTH=6 ALT="Hits: 334" title="Hits: 334"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=91 WIDTH=6 ALT="Bandwidth: 2.61 MB" title="Bandwidth: 2.61 MB"></TD>
+<TD valign=bottom><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=11 WIDTH=6 ALT="Pages: 38" title="Pages: 38"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=71 WIDTH=6 ALT="Hits: 261.50" title="Hits: 261.50"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=78 WIDTH=6 ALT="Bandwidth: 2.23 MB" title="Bandwidth: 2.23 MB"></TD>
+<TD valign=bottom><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=5 WIDTH=6 ALT="Pages: 16" title="Pages: 16"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=36 WIDTH=6 ALT="Hits: 131.50" title="Hits: 131.50"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=28 WIDTH=6 ALT="Bandwidth: 815.56 KB" title="Bandwidth: 815.56 KB"></TD>
+<TD valign=bottom><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=2 WIDTH=6 ALT="Pages: 4" title="Pages: 4"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=8 WIDTH=6 ALT="Hits: 26.50" title="Hits: 26.50"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=8 WIDTH=6 ALT="Bandwidth: 219.28 KB" title="Bandwidth: 219.28 KB"></TD>
+<TD valign=bottom><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 1" title="Pages: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: 1" title="Hits: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=2 WIDTH=6 ALT="Bandwidth: 39.89 KB" title="Bandwidth: 39.89 KB"></TD>
+</TR>
+<TR onmouseover="ShowTip(17);" onmouseout="HideTip(17);">
+<TD>Mon</TD><TD>Tue</TD><TD>Wed</TD><TD>Thu</TD><TD>Fri</TD><TD bgcolor="#EAEAEA">Sat</TD><TD bgcolor="#EAEAEA">Sun</TD></TR></TABLE>
+<br>
+<TABLE>
+<TR><TD width="80" bgcolor="#ECECEC">Day</TD><TD width="80" bgcolor="#4477DD" onmouseover="ShowTip(3);" onmouseout="HideTip(3);">Pages</TD><TD width="80" bgcolor="#66F0FF" onmouseover="ShowTip(4);" onmouseout="HideTip(4);">Hits</TD><TD width="80" bgcolor="#2EA495" onmouseover="ShowTip(5);" onmouseout="HideTip(5);">Bandwidth</TD></TR><TR><TD>Mon</TD><TD>7.67</TD><TD>61</TD><TD>648.06 KB</TD></TR>
+<TR><TD>Tue</TD><TD>29.50</TD><TD>202.50</TD><TD>1.33 MB</TD></TR>
+<TR><TD>Wed</TD><TD>38.50</TD><TD>334</TD><TD>2.61 MB</TD></TR>
+<TR><TD>Thu</TD><TD>38</TD><TD>261.50</TD><TD>2.23 MB</TD></TR>
+<TR><TD>Fri</TD><TD>16</TD><TD>131.50</TD><TD>815.56 KB</TD></TR>
+<TR><TD bgcolor="#EAEAEA">Sat</TD><TD bgcolor="#EAEAEA">4</TD><TD bgcolor="#EAEAEA">26.50</TD><TD bgcolor="#EAEAEA">219.28 KB</TD></TR>
+<TR><TD bgcolor="#EAEAEA">Sun</TD><TD bgcolor="#EAEAEA">1</TD><TD bgcolor="#EAEAEA">1</TD><TD bgcolor="#EAEAEA">39.89 KB</TD></TR>
+</TABLE>
+<br>
+</center></TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+<a name="HOUR">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Hourly (avg) </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR><TD align=center><center><TABLE>
+<TR valign=bottom>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 1" title="Pages: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=7 WIDTH=6 ALT="Hits: 21" title="Hits: 21"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=6 WIDTH=6 ALT="Bandwidth: 122.91 KB" title="Bandwidth: 122.91 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=2 WIDTH=6 ALT="Pages: 4" title="Pages: 4"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=8 WIDTH=6 ALT="Hits: 27" title="Hits: 27"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=8 WIDTH=6 ALT="Bandwidth: 180.99 KB" title="Bandwidth: 180.99 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=3 WIDTH=6 ALT="Pages: 8" title="Pages: 8"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=15 WIDTH=6 ALT="Hits: 51" title="Hits: 51"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=15 WIDTH=6 ALT="Bandwidth: 355.30 KB" title="Bandwidth: 355.30 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 0" title="Pages: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=1 WIDTH=6 ALT="Hits: 0" title="Hits: 0"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=1 WIDTH=6 ALT="Bandwidth: 0" title="Bandwidth: 0"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=5 WIDTH=6 ALT="Pages: 14" title="Pages: 14"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=46 WIDTH=6 ALT="Hits: 156" title="Hits: 156"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=49 WIDTH=6 ALT="Bandwidth: 1.13 MB" title="Bandwidth: 1.13 MB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=6 WIDTH=6 ALT="Pages: 18" title="Pages: 18"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=35 WIDTH=6 ALT="Hits: 116" title="Hits: 116"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=38 WIDTH=6 ALT="Bandwidth: 891.43 KB" title="Bandwidth: 891.43 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=3 WIDTH=6 ALT="Pages: 10" title="Pages: 10"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=37 WIDTH=6 ALT="Hits: 126" title="Hits: 126"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=61 WIDTH=6 ALT="Bandwidth: 1.41 MB" title="Bandwidth: 1.41 MB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=6 WIDTH=6 ALT="Pages: 18" title="Pages: 18"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=39 WIDTH=6 ALT="Hits: 132" title="Hits: 132"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=67 WIDTH=6 ALT="Bandwidth: 1.56 MB" title="Bandwidth: 1.56 MB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=10 WIDTH=6 ALT="Pages: 32" title="Pages: 32"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=48 WIDTH=6 ALT="Hits: 163" title="Hits: 163"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=42 WIDTH=6 ALT="Bandwidth: 992.00 KB" title="Bandwidth: 992.00 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=10 WIDTH=6 ALT="Pages: 32" title="Pages: 32"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=55 WIDTH=6 ALT="Hits: 185" title="Hits: 185"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=51 WIDTH=6 ALT="Bandwidth: 1.18 MB" title="Bandwidth: 1.18 MB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=4 WIDTH=6 ALT="Pages: 12" title="Pages: 12"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=29 WIDTH=6 ALT="Hits: 98" title="Hits: 98"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=56 WIDTH=6 ALT="Bandwidth: 1.30 MB" title="Bandwidth: 1.30 MB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=11 WIDTH=6 ALT="Pages: 35" title="Pages: 35"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=91 WIDTH=6 ALT="Hits: 307" title="Hits: 307"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=91 WIDTH=6 ALT="Bandwidth: 2.10 MB" title="Bandwidth: 2.10 MB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=8 WIDTH=6 ALT="Pages: 27" title="Pages: 27"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=59 WIDTH=6 ALT="Hits: 201" title="Hits: 201"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=55 WIDTH=6 ALT="Bandwidth: 1.28 MB" title="Bandwidth: 1.28 MB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=4 WIDTH=6 ALT="Pages: 11" title="Pages: 11"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=30 WIDTH=6 ALT="Hits: 100" title="Hits: 100"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=25 WIDTH=6 ALT="Bandwidth: 580.51 KB" title="Bandwidth: 580.51 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=5 WIDTH=6 ALT="Pages: 17" title="Pages: 17"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=30 WIDTH=6 ALT="Hits: 102" title="Hits: 102"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=31 WIDTH=6 ALT="Bandwidth: 724.47 KB" title="Bandwidth: 724.47 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 1" title="Pages: 1"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=5 WIDTH=6 ALT="Hits: 15" title="Hits: 15"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=5 WIDTH=6 ALT="Bandwidth: 111.94 KB" title="Bandwidth: 111.94 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=2 WIDTH=6 ALT="Pages: 5" title="Pages: 5"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=18 WIDTH=6 ALT="Hits: 60" title="Hits: 60"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=11 WIDTH=6 ALT="Bandwidth: 260.24 KB" title="Bandwidth: 260.24 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=5 WIDTH=6 ALT="Pages: 14" title="Pages: 14"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=31 WIDTH=6 ALT="Hits: 103" title="Hits: 103"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=33 WIDTH=6 ALT="Bandwidth: 769.53 KB" title="Bandwidth: 769.53 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=4 WIDTH=6 ALT="Pages: 11" title="Pages: 11"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=26 WIDTH=6 ALT="Hits: 88" title="Hits: 88"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=24 WIDTH=6 ALT="Bandwidth: 565.90 KB" title="Bandwidth: 565.90 KB"></TD><TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevp.png" HEIGHT=3 WIDTH=6 ALT="Pages: 7" title="Pages: 7"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevh.png" HEIGHT=14 WIDTH=6 ALT="Hits: 46" title="Hits: 46"><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrevk.png" HEIGHT=40 WIDTH=6 ALT="Bandwidth: 953.13 KB" title="Bandwidth: 953.13 KB"></TD></TR><TR onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><TH width=19>0</TH>
+<TH width=19>1</TH>
+<TH width=19>2</TH>
+<TH width=19>3</TH>
+<TH width=19>4</TH>
+<TH width=19>5</TH>
+<TH width=19>6</TH>
+<TH width=19>7</TH>
+<TH width=19>8</TH>
+<TH width=19>9</TH>
+<TH width=19>10</TH>
+<TH width=19>11</TH>
+<TH width=19>12</TH>
+<TH width=19>13</TH>
+<TH width=19>14</TH>
+<TH width=19>15</TH>
+<TH width=19>16</TH>
+<TH width=19>17</TH>
+<TH width=19>18</TH>
+<TH width=19>19</TH>
+<TH width=19>20</TH>
+<TH width=19>21</TH>
+<TH width=19>22</TH>
+<TH width=19>23</TH>
+</TR>
+<TR onmouseover="ShowTip(17);" onmouseout="HideTip(17);">
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr1.png" width=10 alt="1:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr2.png" width=10 alt="2:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr3.png" width=10 alt="3:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr4.png" width=10 alt="4:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr5.png" width=10 alt="5:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr6.png" width=10 alt="6:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr7.png" width=10 alt="7:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr8.png" width=10 alt="8:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr9.png" width=10 alt="9:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr10.png" width=10 alt="10:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr11.png" width=10 alt="11:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr12.png" width=10 alt="12:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr1.png" width=10 alt="1:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr2.png" width=10 alt="2:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr3.png" width=10 alt="3:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr4.png" width=10 alt="4:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr5.png" width=10 alt="5:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr6.png" width=10 alt="6:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr7.png" width=10 alt="7:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr8.png" width=10 alt="8:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr9.png" width=10 alt="9:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr10.png" width=10 alt="10:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr11.png" width=10 alt="11:00"></TD>
+<TD><IMG SRC="http://webcluster01.covad.net/awstats/icon/clock/hr12.png" width=10 alt="12:00"></TD>
+</TR>
+</TABLE>
+<br>
+<TABLE><TR><TD>
+<TABLE>
+<TR><TD width="80" bgcolor="#ECECEC">Hourly (avg)</TD><TD width="80" bgcolor="#4477DD" onmouseover="ShowTip(3);" onmouseout="HideTip(3);">Pages</TD><TD width="80" bgcolor="#66F0FF" onmouseover="ShowTip(4);" onmouseout="HideTip(4);">Hits</TD><TD width="80" bgcolor="#2EA495" onmouseover="ShowTip(5);" onmouseout="HideTip(5);">Bandwidth</TD></TR><TR><TD>00</TD><TD>1</TD><TD>21</TD><TD>122.91 KB</TD></TR>
+<TR><TD>01</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>02</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>03</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>04</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>05</TD><TD>4</TD><TD>27</TD><TD>180.99 KB</TD></TR>
+<TR><TD>06</TD><TD>8</TD><TD>51</TD><TD>355.30 KB</TD></TR>
+<TR><TD>07</TD><TD>0</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>08</TD><TD>14</TD><TD>156</TD><TD>1.13 MB</TD></TR>
+<TR><TD>09</TD><TD>18</TD><TD>116</TD><TD>891.43 KB</TD></TR>
+<TR><TD>10</TD><TD>10</TD><TD>126</TD><TD>1.41 MB</TD></TR>
+<TR><TD>11</TD><TD>18</TD><TD>132</TD><TD>1.56 MB</TD></TR>
+</TABLE>
+</TD><TD>
+<TABLE>
+<TR><TD width="80" bgcolor="#ECECEC">Hourly (avg)</TD><TD width="80" bgcolor="#4477DD" onmouseover="ShowTip(3);" onmouseout="HideTip(3);">Pages</TD><TD width="80" bgcolor="#66F0FF" onmouseover="ShowTip(4);" onmouseout="HideTip(4);">Hits</TD><TD width="80" bgcolor="#2EA495" onmouseover="ShowTip(5);" onmouseout="HideTip(5);">Bandwidth</TD></TR>
+<TR><TD>12</TD><TD>32</TD><TD>163</TD><TD>992.00 KB</TD></TR>
+<TR><TD>13</TD><TD>32</TD><TD>185</TD><TD>1.18 MB</TD></TR>
+<TR><TD>14</TD><TD>12</TD><TD>98</TD><TD>1.30 MB</TD></TR>
+<TR><TD>15</TD><TD>35</TD><TD>307</TD><TD>2.10 MB</TD></TR>
+<TR><TD>16</TD><TD>27</TD><TD>201</TD><TD>1.28 MB</TD></TR>
+<TR><TD>17</TD><TD>11</TD><TD>100</TD><TD>580.51 KB</TD></TR>
+<TR><TD>18</TD><TD>17</TD><TD>102</TD><TD>724.47 KB</TD></TR>
+<TR><TD>19</TD><TD>1</TD><TD>15</TD><TD>111.94 KB</TD></TR>
+<TR><TD>20</TD><TD>5</TD><TD>60</TD><TD>260.24 KB</TD></TR>
+<TR><TD>21</TD><TD>14</TD><TD>103</TD><TD>769.53 KB</TD></TR>
+<TR><TD>22</TD><TD>11</TD><TD>88</TD><TD>565.90 KB</TD></TR>
+<TR><TD>23</TD><TD>7</TD><TD>46</TD><TD>953.13 KB</TD></TR>
+</TABLE>
+</TD></TR></TABLE>
+<br>
+</center></TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+
+<a name="WHO">&nbsp;</a>
+
+<a name="DOMAINS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Visitors domains/countries (Top 20) </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH width=32>&nbsp;</TH><TH colspan=2>Visitor Domains/Countries</TH><TH bgcolor="#4477DD" width=80>Pages</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#2EA495" width=80>Bandwidth</TH><TH>&nbsp;</TH></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/flags/ip.png" height=14 alt="Unknown"></TD><TD CLASS=AWL>Unknown</TD><TD>ip</TD><TD>277</TD><TD>2097</TD><TD>16.32 MB</TD><TD CLASS=AWL><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehp.png" WIDTH=35 HEIGHT=6 ALT="Pages: 277" title="Pages: 277"><br>
+<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehh.png" WIDTH=261 HEIGHT=6 ALT="Hits: 2097" title="Hits: 2097"><br>
+<IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehk.png" WIDTH=261 HEIGHT=6 ALT="Bandwidth: 16.32 MB" title="Bandwidth: 16.32 MB"></TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+<a name="VISITOR">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Hosts (Top 20) &nbsp; - &nbsp; <a class=whitelink href="awstats.vhost.allhosts.html" target="awstatsbis">(Full list)</a> &nbsp; - &nbsp; <a class=whitelink href="awstats.vhost.lasthosts.html" target="awstatsbis">Last visit</a> &nbsp; - &nbsp; <a class=whitelink href="awstats.vhost.unknownip.html" target="awstatsbis">Unresolved IP Address</a> </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>Hosts : 0 Known, 134 Unknown (unresolved ip) - 84 Unique visitors</TH><TH bgcolor="#4477DD" width=80>Pages</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#2EA495" width=80>Bandwidth</TH><TH width=120>Last visit</TH></TR>
+<TR><TD CLASS=AWL><font color="#666688">Error Statistics</font></TD><TD>277</TD><TD>2097</TD><TD>16.32 MB</TD><TD>&nbsp;</TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+<a name="ROBOTS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Website Crawlers (Top 10) &nbsp; - &nbsp; <a class=whitelink href="awstats.vhost.allrobots.html" target="awstatsbis">(Full list)</a> &nbsp; - &nbsp; <a class=whitelink href="awstats.vhost.lastrobots.html" target="awstatsbis">Last visit</a> </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC" onmouseover="ShowTip(16);" onmouseout="HideTip(16);"><TH>6 different robots</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#2EA495" width=80>Bandwidth</TH><TH width=120>Last visit</TH></TR>
+<TR><TD CLASS=AWL>Unknown robot (identified by 'crawl')</TD><TD>8</TD><TD>32.26 KB</TD><td>14 Sep 2003 - 19:43</td></TR>
+<TR><TD CLASS=AWL>Scooter (AltaVista)</TD><TD>7</TD><TD>41.38 KB</TD><td>08 Sep 2003 - 06:16</td></TR>
+<TR><TD CLASS=AWL>Inktomi Slurp</TD><TD>7</TD><TD>667.04 KB</TD><td>14 Sep 2003 - 23:24</td></TR>
+<TR><TD CLASS=AWL>WISENutbot (Looksmart)</TD><TD>7</TD><TD>41.38 KB</TD><td>13 Sep 2003 - 02:40</td></TR>
+<TR><TD CLASS=AWL>Jeeves</TD><TD>7</TD><TD>41.38 KB</TD><td>07 Sep 2003 - 08:40</td></TR>
+<TR><TD CLASS=AWL>Googlebot (Google)</TD><TD>2</TD><TD>642.74 KB</TD><td>12 Sep 2003 - 06:53</td></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+
+<a name="HOW">&nbsp;</a>
+
+<a name="SESSIONS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Length of visits </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC" onmouseover="ShowTip(1);" onmouseout="HideTip(1);"><TH>Length of visits</TH><TH bgcolor="#8888DD" width=80>Number of visits</TH></TR>
+<tr><td CLASS=AWL>0s-30s</td><td>62</td></tr>
+<tr><td CLASS=AWL>30s-2mn</td><td>16</td></tr>
+<tr><td CLASS=AWL>2mn-5mn</td><td>10</td></tr>
+<tr><td CLASS=AWL>5mn-15mn</td><td>4</td></tr>
+<tr><td CLASS=AWL>15mn-30mn</td><td>2</td></tr>
+<tr><td CLASS=AWL>30mn-1h</td><td>5</td></tr>
+<tr><td CLASS=AWL>1h+</td><td>&nbsp;</td></tr>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+<a name="PAGE">&nbsp;</a><a name="ENTRY">&nbsp;</a><a name="EXIT">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Pages-URL (Top 20) &nbsp; - &nbsp; <a class=whitelink href="awstats.vhost.urldetail.html" target="awstatsbis">(Full list)</a> &nbsp; - &nbsp; <a class=whitelink href="awstats.vhost.urlentry.html" target="awstatsbis">(Entry)</a> &nbsp; - &nbsp; <a class=whitelink href="awstats.vhost.urlexit.html" target="awstatsbis">(Exit)</a> </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>7 different pages-url</TH><TH bgcolor="#4477DD" width=80>Pages Viewed</TH><TH bgcolor="#2EA495" width=80>Average size</TH><TH bgcolor="#CEC2E8" width=80>(Entry)</TH><TH bgcolor="#C1B2E2" width=80>(Exit)</TH><TH>&nbsp;</TH></TR>
+<TR><TD CLASS=AWL><A HREF="http://penrosegroup.com/" target="url">/</A></TD><TD>102</TD><TD>3.76 KB</TD><TD>61</TD><TD>34</TD><TD CLASS=AWL><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehp.png" WIDTH=261 HEIGHT=6 ALT="Pages: 102" title="Pages: 102"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehk.png" WIDTH=4 HEIGHT=6 ALT="Average size: 3.76 KB" title="Average size: 3.76 KB"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehe.png" WIDTH=156 HEIGHT=6 ALT="(Entry): 61" title="(Entry): 61"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehx.png" WIDTH=87 HEIGHT=6 ALT="(Exit): 34" title="(Exit): 34"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://penrosegroup.com/Resumes.html" target="url">/Resumes.html</A></TD><TD>54</TD><TD>10.96 KB</TD><TD>21</TD><TD>20</TD><TD CLASS=AWL><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehp.png" WIDTH=138 HEIGHT=6 ALT="Pages: 54" title="Pages: 54"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehk.png" WIDTH=11 HEIGHT=6 ALT="Average size: 10.96 KB" title="Average size: 10.96 KB"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehe.png" WIDTH=54 HEIGHT=6 ALT="(Entry): 21" title="(Entry): 21"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehx.png" WIDTH=51 HEIGHT=6 ALT="(Exit): 20" title="(Exit): 20"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://penrosegroup.com/contact.html" target="url">/contact.html</A></TD><TD>32</TD><TD>3.72 KB</TD><TD>4</TD><TD>10</TD><TD CLASS=AWL><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehp.png" WIDTH=82 HEIGHT=6 ALT="Pages: 32" title="Pages: 32"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehk.png" WIDTH=4 HEIGHT=6 ALT="Average size: 3.72 KB" title="Average size: 3.72 KB"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehe.png" WIDTH=11 HEIGHT=6 ALT="(Entry): 4" title="(Entry): 4"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehx.png" WIDTH=26 HEIGHT=6 ALT="(Exit): 10" title="(Exit): 10"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://penrosegroup.com/RecentTransactions.html" target="url">/RecentTransactions.html</A></TD><TD>31</TD><TD>3.25 KB</TD><TD>1</TD><TD>11</TD><TD CLASS=AWL><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehp.png" WIDTH=80 HEIGHT=6 ALT="Pages: 31" title="Pages: 31"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehk.png" WIDTH=4 HEIGHT=6 ALT="Average size: 3.25 KB" title="Average size: 3.25 KB"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehe.png" WIDTH=3 HEIGHT=6 ALT="(Entry): 1" title="(Entry): 1"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehx.png" WIDTH=29 HEIGHT=6 ALT="(Exit): 11" title="(Exit): 11"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://penrosegroup.com/LoanOrigination.html" target="url">/LoanOrigination.html</A></TD><TD>29</TD><TD>9.35 KB</TD><TD>5</TD><TD>11</TD><TD CLASS=AWL><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehp.png" WIDTH=74 HEIGHT=6 ALT="Pages: 29" title="Pages: 29"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehk.png" WIDTH=9 HEIGHT=6 ALT="Average size: 9.35 KB" title="Average size: 9.35 KB"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehe.png" WIDTH=13 HEIGHT=6 ALT="(Entry): 5" title="(Entry): 5"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehx.png" WIDTH=29 HEIGHT=6 ALT="(Exit): 11" title="(Exit): 11"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://penrosegroup.com/LoanServicing.html" target="url">/LoanServicing.html</A></TD><TD>19</TD><TD>5.25 KB</TD><TD>2</TD><TD>5</TD><TD CLASS=AWL><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehp.png" WIDTH=49 HEIGHT=6 ALT="Pages: 19" title="Pages: 19"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehk.png" WIDTH=5 HEIGHT=6 ALT="Average size: 5.25 KB" title="Average size: 5.25 KB"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehe.png" WIDTH=6 HEIGHT=6 ALT="(Entry): 2" title="(Entry): 2"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehx.png" WIDTH=13 HEIGHT=6 ALT="(Exit): 5" title="(Exit): 5"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://penrosegroup.com/pdf/Penrose.pdf" target="url">/pdf/Penrose.pdf</A></TD><TD>10</TD><TD>281.62 KB</TD><TD>5</TD><TD>8</TD><TD CLASS=AWL><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehp.png" WIDTH=26 HEIGHT=6 ALT="Pages: 10" title="Pages: 10"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehk.png" WIDTH=261 HEIGHT=6 ALT="Average size: 281.62 KB" title="Average size: 281.62 KB"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehe.png" WIDTH=13 HEIGHT=6 ALT="(Entry): 5" title="(Entry): 5"><br><IMG SRC="http://webcluster01.covad.net/awstats/icon/other/barrehx.png" WIDTH=21 HEIGHT=6 ALT="(Exit): 8" title="(Exit): 8"></TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+<a name="FILETYPES">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">File Types </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>File Types</TH><TH bgcolor="#66F0FF" width=80>&nbsp;Hits&nbsp;</TH><TH bgcolor="#66F0FF" width=80>Percent</TH><TH bgcolor="#2EA495" width=80>Bandwidth</TH></TR>
+<TR><TD CLASS=AWL>gif</TD><TD>1719</TD><TD>81.9 %</TD><TD>11.98 MB</TD></TR>
+<TR><TD CLASS=AWL>html</TD><TD>267</TD><TD>12.7 %</TD><TD>1.53 MB</TD></TR>
+<TR><TD CLASS=AWL>css</TD><TD>101</TD><TD>4.8 %</TD><TD>65.91 KB</TD></TR>
+<TR><TD CLASS=AWL>pdf</TD><TD>10</TD><TD>0.4 %</TD><TD>2.75 MB</TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+<a name="OS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Operating Systems </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH colspan=2>OS</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#66F0FF" width=80>Percent</TH></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/os/win2000.png" alt=""></TD><TD CLASS=AWL>Windows 2000</TD><TD>1156</TD><TD>55.1 %</TD></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/os/winxp.png" alt=""></TD><TD CLASS=AWL>Windows XP</TD><TD>399</TD><TD>19 %</TD></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/os/win98.png" alt=""></TD><TD CLASS=AWL>Windows 98</TD><TD>371</TD><TD>17.6 %</TD></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/os/macintosh.png" alt=""></TD><TD CLASS=AWL>Mac OS</TD><TD>110</TD><TD>5.2 %</TD></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/os/winnt.png" alt=""></TD><TD CLASS=AWL>Windows NT</TD><TD>29</TD><TD>1.3 %</TD></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/os/winme.png" alt=""></TD><TD CLASS=AWL>Windows Me</TD><TD>17</TD><TD>0.8 %</TD></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/os/unknown.png" alt="Unknown"></TD><TD CLASS=AWL><a href="awstats.vhost.unknownos.html" target="awstatsbis">Unknown</a></TD><TD>15</TD><TD>0.7 %</TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+<a name="BROWSER">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Browsers </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH colspan=2>Browsers</TH><TH width=80>Grabber</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#66F0FF" width=80>Percent</TH></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/browser/msie.png" alt=""></TD><TD CLASS=AWL>MS Internet Explorer <a href="awstats.vhost.browserdetail.html" target="awstatsbis">(Versions)</a></TD><TD width=80>No</TD><TD>1962</TD><TD>93.5 %</TD></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/browser/netscape.png" alt=""></TD><TD CLASS=AWL>Netscape <a href="awstats.vhost.browserdetail.html" target="awstatsbis">(Versions)</a></TD><TD width=80>No</TD><TD>120</TD><TD>5.7 %</TD></TR>
+<TR><TD width=32><IMG SRC="http://webcluster01.covad.net/awstats/icon/browser/unknown.png" alt="Unknown"></TD><TD CLASS=AWL><a href="awstats.vhost.unknownbrowser.html" target="awstatsbis">Unknown</a></TD><TD width=80>?</TD><TD>15</TD><TD>0.7%</TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+
+<a name="REFERER">&nbsp;</a>
+
+<a name="REFERER">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Connect to site from </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>Visitor Origin Summary</TH><TH bgcolor="#4477DD" width=80>Pages</TH><TH bgcolor="#4477DD" width=80>Percent</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#66F0FF" width=80>Percent</TH></TR>
+<TR><TD CLASS=AWL><b>Direct address / Bookmarks</b></TD><TD>90</TD><TD>32.4 %</TD><TD>166</TD><TD>7.9 %</TD></TR>
+<TR><TD CLASS=AWL><b>Links from a NewsGroup</b></TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD><TD>&nbsp;</TD></TR>
+<TR onmouseover="ShowTip(13);" onmouseout="HideTip(13);"><TD CLASS=AWL><b>Links from an Internet Search Engine</b> - <a href="awstats.vhost.refererse.html" target="awstatsbis">(Full list)</a><br>
+<TABLE>
+<TR><TD CLASS=AWL>- Google</TD><TD align=right> 14 </TD></TR>
+<TR><TD CLASS=AWL>- MSN</TD><TD align=right> 12 </TD></TR>
+<TR><TD CLASS=AWL>- Yahoo</TD><TD align=right> 11 </TD></TR>
+<TR><TD CLASS=AWL>- AOL</TD><TD align=right> 3 </TD></TR>
+<TR><TD CLASS=AWL>- Google (Images)</TD><TD align=right> 2 </TD></TR>
+<TR><TD CLASS=AWL>- Excite</TD><TD align=right> 1 </TD></TR>
+<TR><TD CLASS=AWL>- MetaCrawler (Metamoteur)</TD><TD align=right> 1 </TD></TR>
+</TABLE></TD>
+<TD valign=top>44</TD><TD valign=top>15.8 %</TD><TD valign=top>44</TD><TD valign=top>2 %</TD></TR>
+<TR onmouseover="ShowTip(14);" onmouseout="HideTip(14);"><TD CLASS=AWL><b>Links from an external page (other web sites except search engines)</b> - <a href="awstats.vhost.refererpages.html" target="awstatsbis">(Full list)</a><br>
+<TABLE>
+<TR><TD CLASS=AWL>- <A HREF="http://www.mbamw.org/consumer.html" target="url">http://www.mbamw.org/consumer.html</A></TD><TD>2</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.att.net/cgi-bin/websearch" target="url">http://www.att.net/cgi-bin/websearch</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.mbaa.org/cref/stateList.asp" target="url">http://www.mbaa.org/cref/stateList.asp</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.cafecolumbia.com/link_db.php" target="url">http://www.cafecolumbia.com/link_db.php</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://asp.usatoday.com/search/search.aspx" target="url">http://asp.usatoday.com/search/search.aspx</A></TD><TD>1</TD></TR>
+</TABLE></TD>
+<TD valign=top>6</TD><TD valign=top>2.1 %</TD><TD valign=top>6</TD><TD valign=top>0.2 %</TD></TR>
+<TR><TD CLASS=AWL><b>Links from an internal page (other page on same site)</b></TD><TD>136</TD><TD>49 %</TD><TD>1880</TD><TD>89.6 %</TD></TR>
+<TR><TD CLASS=AWL><b>Unknown Origin</b></TD><TD>1</TD><TD>0.3 %</TD><TD>1</TD><TD>0 %</TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+
+<a name="KEYS">&nbsp;</a>
+
+<a name="KEYPHRASES">&nbsp;</a><a name="KEYWORDS">&nbsp;</a><BR>
+<table width="100%"><tr><td width="50%" valign=top>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="95%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Top&nbsp;Search&nbsp;Keyphrases (Top 20)<br><a class=whitelink href="awstats.vhost.keyphrases.html" target="awstatsbis">(Full list)</a> </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC" onmouseover="ShowTip(15);" onmouseout="HideTip(15);"><TH>0 different keyphrases</TH><TH bgcolor="#8888DD" width=80>Search</TH><TH bgcolor="#8888DD" width=80>Percent</TH></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+</td>
+<td width="50%" valign=top>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="95%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Top&nbsp;Search&nbsp;Keywords (Top 20)<br><a class=whitelink href="awstats.vhost.keywords.html" target="awstatsbis">(Full list)</a> </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC" onmouseover="ShowTip(15);" onmouseout="HideTip(15);"><TH>0 different keywords</TH><TH bgcolor="#8888DD" width=80>Search</TH><TH bgcolor="#8888DD" width=80>Percent</TH></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+</td>
+</tr></table>
+
+<a name="OTHER">&nbsp;</a>
+
+<a name="ERRORS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="100%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">HTTP Error codes </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH colspan=2>HTTP Error codes</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#66F0FF" width=80>Percent</TH><TH bgcolor="#2EA495" width=80>Bandwidth</TH></TR>
+<TR onmouseover="ShowTip(206);" onmouseout="HideTip(206);"><TD>206</TD><TD CLASS=AWL>Partial Content</TD><TD>40</TD><TD>56.3 %</TD><TD>2.44 MB</TD></TR>
+<TR onmouseover="ShowTip(404);" onmouseout="HideTip(404);"><TD><a href="awstats.vhost.errors404.html" target="awstatsbis">404</a></TD><TD CLASS=AWL>Document Not Found</TD><TD>31</TD><TD>43.6 %</TD><TD>8.84 KB</TD></TR>
+</TABLE></TD></TR></TABLE><center><a href=#>Back to Top</a></div><br>
+
+
+
+</body>
+</html>

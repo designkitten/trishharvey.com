@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gallery>
+<album title="Portfolio" description="Trish's Portfolio" lgPath="gallery/album1/large/" tnPath="gallery/album1/thumbs/" tn="gallery/album1/albumThumb.jpg">
+  <img src="vi.jpg" caption="The Vinyl Institute :: Production" />
+  <img src="scicenter.jpg" caption="Science Center :: Comp" />
+  <img src="plasticsinfo.jpg" caption="PlasticsInfo.com :: Comp" />
+  <img src="plastic_car2.jpg" caption="Plastic Car :: Comp" />
+  <img src="monsantoredo.jpg" caption="Monsanto USA :: Comp" />
+  <img src="monsanto_us.jpg" caption="Monsanto USA :: Production" />
+  <img src="americanrivers.jpg" caption="American Rivers :: Comp" />
+  <img src="cmgisolportfolio.jpg" caption="CMGI Solutions Portfolio :: Comp" />
+  <img src="compaccomp3.jpg" caption="Compaq - What Makes a Dot Stop? :: Unknown" />
+  <img src="cscomp1_public.jpg" caption="CMGI Solutions :: Comp" />
+  <img src="fncomptop2_designer.jpg" caption="Footwear Network :: Production" />
+  <img src="mamsi.jpg" caption="Mamsi :: Comp" />
+  <img src="psnnetwork.jpg" caption="PSN Network :: Comp" />
+  <img src="risiredesign1.jpg" caption="Reliable Integration Services :: Comp One" />
+  <img src="risiredesign2.jpg" caption="Reliable Integration Services :: Comp Two" />
+  <img src="risiredesign3.jpg" caption="Reliable Integration Services :: Comp Three" />
+  <img src="risi-main.jpg" caption="Reliable Integration Services :: Production" />
+  <img src="travail.jpg" caption="Travail Information Graphic" />
+  <img src="MethodologyComplete.jpg" caption="Reliable Methodology" />
+  <img src="piweb_as.jpg" caption="PI Studios :: Comp" />
+  <img src="lgb-afsystem-main.jpg" caption="Air Force Office of Scientific Research :: Comp" />
+</album>
+</gallery>

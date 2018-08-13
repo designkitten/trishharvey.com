@@ -1,0 +1,339 @@
+<html>
+
+<head>
+<title>Home Page</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+
+
+<script LANGUAGE="JavaScript" FPTYPE="dynamicanimation">
+<!--
+  // If you want to change this script, you must also make the following
+  // changes so that FrontPage will not overwrite your new script.
+  // In the script tag, change type="dynamicanimation" to type="mydynamicanimation"
+  // In the first script statement, change "dynamicanimation" to "mydynamicanimation"
+  // Throughout the HTML content, change dynamicanimation= to mydynamicanimation=
+  // Change function dynAnimation to function mydynAnimation
+  // In the body tag, change onload="dynAnimation()" to onload="mydynAnimation()"
+  dynamicanimAttr = "dynamicanimation"
+  animateElements = new Array()
+  currentElement = 0
+  speed = 0
+  stepsZoom = 8
+  stepsWord = 8
+  stepsFly = 12
+  stepsSpiral = 16
+  steps = stepsZoom
+  step = 0
+  outString = ""
+  function dynAnimation()
+  {
+    var ms = navigator.appVersion.indexOf("MSIE")
+    ie4 = (ms>0) && (parseInt(navigator.appVersion.substring(ms+5, ms+6)) >= 4)
+    if(!ie4)
+    {
+      if((navigator.appName == "Netscape") &&
+         (parseInt(navigator.appVersion.substring(0, 1)) >= 4))
+      {
+        for (index=document.layers.length-1; index >= 0; index--)
+        {
+            layer=document.layers[index]
+            if (layer.left==10000)
+                layer.left=0
+        }
+      }
+      return
+    }
+    for (index=document.all.length-1; index >= document.body.sourceIndex; index--)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if(null != animation)
+      {
+        if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        {
+          ih = el.innerHTML
+          outString = ""
+          i1 = 0
+          iend = ih.length
+          while(true)
+          {
+            i2 = startWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, false, "")
+            if(i2 == iend)
+              break
+            i1 = i2
+            i2 = endWord(ih, i1)
+            if(i2 == -1)
+              i2 = iend
+            outWord(ih, i1, i2, true, animation)
+            if(i2 == iend)
+              break
+            i1 = i2
+          }
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+        if(animation == "zoomIn" || animation == "zoomOut")
+        {
+          ih = el.innerHTML
+          outString = "<SPAN " + dynamicanimAttr + "=\"" + animation + "\" style=\"position: relative; left: 10000;\">"
+          outString += ih
+          outString += "</SPAN>"
+          document.all[index].innerHTML = outString
+          document.all[index].style.posLeft = 0
+          document.all[index].setAttribute(dynamicanimAttr, null)
+        }
+      }
+    }
+    i = 0
+    for (index=document.body.sourceIndex; index < document.all.length; index++)
+    {
+      el = document.all[index]
+      animation = el.getAttribute(dynamicanimAttr, false)
+      if (null != animation)
+      {
+        if(animation == "flyLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyRight")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = 0
+        }
+        else if(animation == "flyTop" || animation == "dropWord")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottom")
+        {
+          el.style.posLeft = 0
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyTopLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyTopRight" || animation == "flyTopRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "flyBottomLeft")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "flyBottomRight" || animation == "flyBottomRightWord")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)+document.body.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)+document.body.offsetHeight
+        }
+        else if(animation == "spiral")
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = document.body.scrollTop-offsetTop(el)-el.offsetHeight
+        }
+        else if(animation == "zoomIn")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else if(animation == "zoomOut")
+        {
+          el.style.posLeft = 10000
+          el.style.posTop = 0
+        }
+        else
+        {
+          el.style.posLeft = 10000-offsetLeft(el)-el.offsetWidth
+          el.style.posTop = 0
+        }
+        el.initLeft = el.style.posLeft
+        el.initTop = el.style.posTop
+        animateElements[i++] = el
+      }
+    }
+    window.setTimeout("animate();", speed)
+  }
+  function offsetLeft(el)
+  {
+    x = el.offsetLeft
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      x += e.offsetLeft;
+    return x
+  } 
+  function offsetTop(el)
+  {
+    y = el.offsetTop
+    for (e = el.offsetParent; e; e = e.offsetParent)
+      y += e.offsetTop;
+    return y
+  } 
+  function startWord(ih, i)
+  {
+    for(tag = false; i < ih.length; i++)
+    {
+      c = ih.charAt(i)
+      if(c == '<')
+        tag = true
+      if(!tag)
+        return i
+      if(c == '>')
+        tag = false
+    }
+    return -1
+  }
+  function endWord(ih, i)
+  {
+    nonSpace = false
+    space = false
+    while(i < ih.length)
+    {
+      c = ih.charAt(i)
+      if(c != ' ')
+        nonSpace = true
+      if(nonSpace && c == ' ')
+        space = true
+      if(c == '<')
+        return i
+      if(space && c != ' ')
+        return i
+      i++
+    }
+    return -1
+  }
+  function outWord(ih, i1, i2, dyn, anim)
+  {
+    if(dyn)
+      outString += "<SPAN " + dynamicanimAttr + "=\"" + anim + "\" style=\"position: relative; left: 10000;\">"
+    outString += ih.substring(i1, i2)
+    if(dyn)
+      outString += "</SPAN>"
+  }
+  function animate()
+  {
+    el = animateElements[currentElement]
+    animation = el.getAttribute(dynamicanimAttr, false)
+    step++
+    if(animation == "spiral")
+    {
+      steps = stepsSpiral
+      v = step/steps
+      rf = 1.0 - v
+      t = v * 2.0*Math.PI
+      rx = Math.max(Math.abs(el.initLeft), 200)
+      ry = Math.max(Math.abs(el.initTop),  200)
+      el.style.posLeft = Math.ceil(-rf*Math.cos(t)*rx)
+      el.style.posTop  = Math.ceil(-rf*Math.sin(t)*ry)
+    }
+    else if(animation == "zoomIn")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(50+50*step/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else if(animation == "zoomOut")
+    {
+      steps = stepsZoom
+      el.style.fontSize = Math.ceil(100+200*(steps-step)/steps) + "%"
+      el.style.posLeft = 0
+    }
+    else
+    {
+      steps = stepsFly
+      if(animation == "dropWord" || animation == "flyTopRightWord" || animation == "flyBottomRightWord")
+        steps = stepsWord
+      dl = el.initLeft / steps
+      dt = el.initTop  / steps
+      el.style.posLeft = el.style.posLeft - dl
+      el.style.posTop = el.style.posTop - dt
+    }
+    if (step >= steps) 
+    {
+      el.style.posLeft = 0
+      el.style.posTop = 0
+      currentElement++
+      step = 0
+    }
+    if(currentElement < animateElements.length)
+      window.setTimeout("animate();", speed)
+  }
+//-->
+</script><meta name="Microsoft Theme" content="none, default"><meta name="Microsoft Border" content="none, default"></head>
+
+<body onload="dynAnimation()">
+
+<p dynamicanimation="dropWord" style="position: relative !important; left: 10000 !important"><em><big><big><big><strong><font face="MS Sans Serif">Loan Opportunities</font><font face="Arial">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></strong></big></big></big></em><a href="http://penrosegroup.com"><img src="Penrose.jpg" alt="Penrose.jpg (10433 bytes)" WIDTH="156" HEIGHT="67"></a></p>
+
+<p><small><font face="MS Sans Serif"><strong><font color="#FF0000">Penrose loan officers
+are continually searching the Washington, DC / Baltimore Region for financing transactions
+that meet institutional investor requirements</font>.</strong>&nbsp; Mortgage loan
+opportunities herein have been generated through direct communication with property
+owners.&nbsp; The following is a brief sampling of transactions in process as of 2/11/98.
+&nbsp; </font></small></p>
+
+<p><small><font face="MS Sans Serif">To E-mail any Penrose Loan Officer: <a href="mailto:penrose@compuserve.com">penrose@compuserve.com</a> .</font></small></p>
+
+<p><font face="MS Sans Serif" color="#FF0000">Office Building:&nbsp; </font><font face="MS Sans Serif" color="#400040">A fully occupied 1980s vintage, multi-tenant office
+building of approximately 60,000 SF is located in a submarket with very low vacancy.
+&nbsp;&nbsp; Featuring excellent financial sponsorship, Penrose will arrange a loan in the
+$5.7 Million range.&nbsp; Please contact Gary McGlynn for information at 703-847-5270.</font></p>
+
+<p><font face="MS Sans Serif" color="#FF0000">Apartment Complex:</font><font face="MS Sans Serif" color="#400040">&nbsp; An all brick and concrete, apartment complex
+with an excellent inner suburb location.&nbsp; The low number of units is complimented by
+an excellent low vacancy history.&nbsp; A loan in the range of $1.3 Million would be
+approximately $40,000 per unit.&nbsp; There are many other attributes which will allow
+Penrose to arrange this financing quickly.&nbsp; Please call Gary McGlynn for information
+at 703-847-5270.</font></p>
+
+<p><font face="MS Sans Serif" color="#FF0000">Warehouse Portfolio.&nbsp; </font><font face="MS Sans Serif" color="#400040">A 2 Million SF portfolio of three1970s high-cube
+warehouse buildings that have been totally renovated and released to credit tenants.
+&nbsp;&nbsp; Ideal Interstate location for regional distribution.&nbsp; Penrose will
+arrange a loan in the low $60 Million range.&nbsp; For information contact Mark Gregg at
+703-847-5270.</font></p>
+
+<p><font face="MS Sans Serif"><font color="#FF0000">Suites Hotel.</font>&nbsp;&nbsp; Class
+A Suites hotel with solid extended stay clientele that was constructed in the 1980s.
+&nbsp; Excellent operational history with low vacancies for approximately 200 rooms.
+&nbsp;&nbsp; Valued at over $30 Million.&nbsp; Penrose will arrange a loan in the low $20
+Million range.&nbsp; For information contact Gary McGlynn</font><font face="MS Sans Serif" color="#400040"> at 703-847-5270</font><font face="MS Sans Serif">.</font></p>
+
+<p><font face="MS Sans Serif"><font color="#FF0000">Food/Drug Retail Center.</font> &nbsp;
+A 1960's vintage, 75,000 SF community center that was remodeled in the early 1990's.&nbsp;
+Penrose will arrange a loan in the $6 Million range for this well located center.&nbsp;
+Please contact Phil Fowler for information</font><font face="MS Sans Serif" color="#400040"> at 703-847-5270</font><font face="MS Sans Serif">.</font></p>
+
+<p><font face="MS Sans Serif"><font color="#FF0000">Food/Drug Retail Center.&nbsp; </font><font color="#400040">A to-be-built retail center.&nbsp; Penrose will arrange a Forward Loan
+Commitment in the $15 Million range for the regional developer/sponsor. This center of
+approximately 150,000 SF will serve the resident local community, as well as a seasonal
+increase of visitors.&nbsp; Penrose previously provided a permanent loan on a similar
+center that performed above expectations.&nbsp; Please contact Gary McGlynn for
+information</font></font><font face="MS Sans Serif" color="#400040"> at 703-847-5270.</font></p>
+
+<p><font face="MS Sans Serif" color="#FF0000">Office Building</font><font face="MS Sans Serif" color="#400040">.&nbsp; Located in a low vacancy submarket, this is a
+1960's vintage office building that has been extensively renovated and brought to full
+occupancy by new owners and new management.&nbsp; Penrose will arrange a mortgage of
+approximately <br>
+$7 Million on the building, which will equate to approximately $100/SF and provide a DCR
+in excess of 1.40.&nbsp; Gary McGlynn is available for inquiries at 703-847-5270.</font></p>
+
+<p><font face="MS Sans Serif" color="#FF0000">Food/Drug Retail Center.</font><font face="MS Sans Serif" color="#400040">&nbsp; Acquisition financing to support a purchase
+price of approximately $14 Million for an attractive new suburban center that is over 90%
+leased.&nbsp;&nbsp; Contact Phil Fowler for details at 703-847-5270.</font></p>
+
+<p><font face="MS Sans Serif" color="#FF0000">Office Complex.</font><font face="MS Sans Serif" color="#400040">&nbsp; A 80,000 SF suburban office complex that is
+100% leased today.&nbsp; The local owner will consider creative alternatives to replace
+the existing debt of approximately $6 Million.&nbsp; For particulars, contact Phil Fowler
+at 703-847-5270.</font></p>
+
+<p>&nbsp;</p>
+</body>
+</html>

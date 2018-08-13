@@ -1,0 +1,49 @@
+body {
+	background-image:url(http://www.fetchmedia.com/images/bg.jpg);
+	background-repeat: repeat-x;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	color:fff;
+	font-size:12px; 
+	}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	}
+
+h3 {
+	font-size: 120%;
+	}
+	
+p {
+	font-size: .8em;
+	color:#003333;
+	}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	}
+
+a:hover {
+	text-decoration:underline;
+	}
+	
+.fmFrame {
+	padding: 10px;
+	background-color:#fff;
+	border:1px solid #41697c;
+	border-bottom:5px solid #41697c;
+	width:525px;
+	}
+	
+.fmFrameText {
+	width:525px;
+	font-size:1.0em;
+	}
+	
+#footer {
+	border-top: 1px dotted #41697c;
+	padding-top:5px;
+	text-align: center;
+	font-size: .7em;
+	}

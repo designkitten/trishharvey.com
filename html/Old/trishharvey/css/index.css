@@ -1,0 +1,68 @@
+body {
+	color: #464807;
+	font-family: garamond, times;
+	font-size:14px;
+	line-height: 150%;
+	}
+	
+a {
+	text-decoration:none;
+	}
+	
+.footer {
+	margin: auto;
+	width: 500px;
+	text-align:center;
+	margin-top:40px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:.8em;
+	}
+	
+.footer a{
+	color:#999999;
+	}
+	
+.copy 
+	{
+	text-decoration: none;
+	margin:auto;
+	width: 500px;
+	}
+	
+.copy h3 {
+	color:#333333;
+	font-size:2.0em;
+	font-weight:normal;
+	text-align:center;
+	}
+	
+.dropcap {
+	float:left;
+	font-size:4.0em;
+	color:#DFAB45;
+	font-weight:bold;
+	padding:10px;
+	}
+	
+.asbackground {
+	background-image:url(../images/petal.jpg);
+	background-repeat:no-repeat;
+	background-position:top;
+	}
+	
+.backitup {
+	margin-left:-10px; 
+	margin-top:-10px;
+	} 
+	
+	.INDENT
+		{
+		text-indent: 25pt;
+		}
+	.NOTE
+                {
+                font-size: 8pt;
+                text-decoration: none;
+                font-family: helvetica,arial,geneva;
+                line-height: normal;
+                }

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FOIA Reading Room</title>
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+ <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+(function($) {
+    $(document).ready(function () { 
+        /*-------------------- EXPANDABLE PANELS ----------------------*/
+        var panelspeed = 500; //panel animate speed in milliseconds
+        var totalpanels = 3; //total number of collapsible panels   
+        var defaultopenpanel = 0; //leave 0 for no panel open   
+        var accordian = false; //set panels to behave like an accordian, with one panel only ever open at once      
+ 
+        var panelheight = new Array();
+        var currentpanel = defaultopenpanel;
+        var iconheight = parseInt($('.icon-close-open').css('height'));
+        var highlightopen = true;
+         
+        //Initialise collapsible panels
+        function panelinit() {
+                for (var i=1; i<=totalpanels; i++) {
+                    panelheight[i] = parseInt($('#cp-'+i).find('.expandable-panel-content').css('height'));
+                    $('#cp-'+i).find('.expandable-panel-content').css('margin-top', -panelheight[i]);
+                    if (defaultopenpanel == i) {
+                        $('#cp-'+i).find('.icon-close-open').css('background-position', '0px -'+iconheight+'px');
+                        $('#cp-'+i).find('.expandable-panel-content').css('margin-top', 0);
+                    }
+                }
+        }
+ 
+        $('.expandable-panel-heading').click(function() {           
+            var obj = $(this).next();
+            var objid = parseInt($(this).parent().attr('ID').substr(3,2));  
+            currentpanel = objid;
+            if (accordian == true) {
+                resetpanels();
+            }
+             
+            if (parseInt(obj.css('margin-top')) <= (panelheight[objid]*-1)) {
+                obj.clearQueue();
+                obj.stop();
+                obj.prev().find('.icon-close-open').css('background-position', '0px -'+iconheight+'px');
+                obj.animate({'margin-top':0}, panelspeed);
+                if (highlightopen == true) {
+                    $('#cp-'+currentpanel + ' .expandable-panel-heading').addClass('header-active');
+                }
+            } else {
+                obj.clearQueue();
+                obj.stop();
+                obj.prev().find('.icon-close-open').css('background-position', '0px 0px');
+                obj.animate({'margin-top':(panelheight[objid]*-1)}, panelspeed); 
+                if (highlightopen == true) {
+                    $('#cp-'+currentpanel + ' .expandable-panel-heading').removeClass('header-active');   
+                }
+            }
+        });
+         
+        function resetpanels() {
+            for (var i=1; i<=totalpanels; i++) {
+                if (currentpanel != i) {
+                    $('#cp-'+i).find('.icon-close-open').css('background-position', '0px 0px');
+                    $('#cp-'+i).find('.expandable-panel-content').animate({'margin-top':-panelheight[i]}, panelspeed);
+                    if (highlightopen == true) {
+                        $('#cp-'+i + ' .expandable-panel-heading').removeClass('header-active');
+                    }
+                }
+            }
+        }
+             
+ 
+        $(window).load(function() {
+ 			panelinit();
+        }); //END LOAD
+    }); //END READY
+})(jQuery);
+</script>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<div id="header">
+<p><a href="index.html"><img src="images/rmdaidentity.png" alt="RMDA Freedom of Information Act Electronic Reading Room" name="RMDA Freedom of Information Act Electronic Reading Room" /></a></p><form><p class="formbuffer"> <input type="text" name="search" size="70px"/><input type="submit" value="Search"/></p></form>
+
+</div>
+
+
+<div id="content-wrapper">
+<h1>Document Categories</h1>
+
+<p>The Freedom of Information Act Office is responsible for management oversight of the Army-wide implementation of the Freedom of Information Act (FOIA) programs in accordance with 5 USC, and Public Law 106-554.</p>
+
+
+<div id="oneColumn">
+
+<h2 style="background-color:#923239;">(a)(2)(A) Records</h2>
+
+<h3>Final opinions and orders made in the adjudication of cases that may be cited, used, or relied upon as precedents in future adjudications.</h3>
+
+<p class="colwrapper"><a href="null">Final Opinions</a>, <a href="null">Final Orders</a></p>
+
+<p class="clear">&nbsp;</p>
+
+<h2 style="background-color:#b79427;">(a)(2)(B) Records</h2>
+
+<h3>Statements of policy and interpretations that have been adopted by the agency and are not published in the Federal Register.</h3>
+
+<p class="colwrapper"><a href="null">Statements of Policy</a>, <a href="null">Interpretations of Policy</a></p>
+
+<p class="clear">&nbsp;</p>
+
+<h2 style="background-color:#ed3017;">(a)(2)(C) Records</h2>
+
+<h3>Administrative staff manuals and instructions, or portions thereof, that establish DoD policy or interpretations of policy that affect the public.</h3>
+
+<p class="colwrapper">Manuals, Instructions, Guides, Regulations</p>
+
+<p class="clear">&nbsp;</p>
+
+<h2 style="background-color:#8e9aa8;">(a)(2)(D) Records</h2>
+
+<h3>Records released to the public, under the FOIA, that are or will likely become the subject of subsequent requests.</h3>
+
+<p class="colwrapper" style="border-bottom:none;">Criminal Investigation Records, Contracts, Army Regulation 15-6 Investigation, Sexual Harassment in the Army, Intelligence Documents, Discrimination and Racial Conflict, FOIA Annual Reports, Corporal Patrick Tillman, Report on Unidentified Flying Objects, Espionage, Project Canasta Deck</p>
+
+<div id="container">
+    <div class="expandable-panel" id="cp-1">
+        <div class="expandable-panel-heading">
+            <div style="text-align:center; font-family:Verdana, Geneva, sans-serif; ">More</div>
+      </div>
+        <div class="expandable-panel-content">
+            <p>Flights to Cambodia, Project Canny Lass, Intelligence Services, Survey Reports, Suicides at Houston Recruiting Battalion, Statistics, Regulation, Research Reports, Memos, WWII Chemical Warfare Services (CWS) Records, Congressional Correspondences/Matters, Miscellaneous, Agent Orange, Missouri River Reservoir, Audits, Financial, Military Insignia, Plains Southcap Pipeline, Bradley Manning Court-Martial Documents</p>
+        </div>
+    </div>
+</div>
+
+<p class="clear">&nbsp;</p>
+
+</div>
+
+</div>
+
+<div id="footer">
+
+<p><a href="">Submit a FOIA request</a> |  <a href="">Technical Issues</a></p>
+<p><a href="">Home</a> | <a href="">Records Management and Declassification Agency</a></p>
+<p><a href="">Office of the Administrative Assistant to the Secretary of the Army</a>  |  <a href="">U.S. Army</a></p>
+
+</div>
+
+</div>
+
+</body>
+</html>
